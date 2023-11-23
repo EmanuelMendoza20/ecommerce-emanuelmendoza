@@ -1,13 +1,15 @@
 import classes from './Navbar.module.css'
 import CartWidget from '../CartWidget/CartWidget'
+import logoImg from './assets/logo-brand.svg'
 
 const Navbar = ({company}) => {
     return (
         <nav>
-            <p>{company}</p>
+            <img src={logoImg}/>
             <section>
                 <button>Phones</button>
                 <button>Laptops</button>
+                <button>Headphones</button>
                 <button>Gadgets</button>
             </section>
             <CartWidget/>

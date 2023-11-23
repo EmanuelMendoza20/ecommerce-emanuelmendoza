@@ -3,15 +3,23 @@ button{
     align-items: center;
     gap: 8px;
     padding: 12px 14px;
-    color: rgb(42, 42, 42);
-    background-color: rgb(229, 229, 229);
+    color: #1C1C1C;
+    background-color: rgb(246, 246, 246);
     box-shadow: 0;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 6px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;;
     font-size: 16px;
+    font-style: normal;
     font-weight: 500;
+    line-height: 22px;
+    transition: .3s;
 }
 
 button:hover{
-    background-color: rgb(221, 221, 221)
+    background-color: rgb(238, 238, 238)
+}
+
+button img{
+    width: 20px;
 }
