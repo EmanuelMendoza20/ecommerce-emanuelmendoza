@@ -21,9 +21,9 @@ const ItemCount = ({ initialValue, incrementBy, stock }) => {
         <div className='item-count'>
             <h1>{count}</h1>
             <div className='item-count-control'>
-                <button className='btns' onClick={decrement}>Decrementar</button>
-                <button className='btns' onClick={() => setCount(initialValue)}>Reiniciar</button>
-                <button className='btns' onClick={increment}>Incrementar</button>
+                <button className='btns' onClick={decrement}>-</button>
+                <button className='btns to-cart' onClick={() => onAdd(count)}>Agregar al carrito</button>
+                <button className='btns' onClick={increment}>+</button>
             </div>
             
         </div>
