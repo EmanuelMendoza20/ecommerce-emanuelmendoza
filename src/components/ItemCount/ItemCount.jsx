@@ -1,24 +1,31 @@
-import { useState } from "react"
+import { useState } from 'react'
+import './ItemCount.css'
 
-const ItemCount = ({initialValue, incrementBy}) => {
-    const [count, setCount] = useState(initialValue)
+const ItemCount = ({ initialValue, incrementBy, stock }) => {
+    const [count, setCount] = useState(0)
 
     const decrement = () => {
-        if(count > 0){
-            setCount(prev => prev - incrementBy)
+        if(count > 0) {
+            setCount(prev => prev - 1)
         }
     }
 
     const increment = () => {
-        setCount(prev => prev + incrementBy)
+        if(count < stock){
+            setCount(prev => prev + 1)
+        }
+
     }
 
     return (
-        <div>
+        <div className='item-count'>
             <h1>{count}</h1>
-            <button onClick={decrement}>Decrementar</button>
-            <button onClick={() => setCount(initialValue)}>Reiniciar</button>
-            <button onClick={increment}>Incrementar</button>
+            <div className='item-count-control'>
+                <button className='btns' onClick={decrement}>Decrementar</button>
+                <button className='btns' onClick={() => setCount(initialValue)}>Reiniciar</button>
+                <button className='btns' onClick={increment}>Incrementar</button>
+            </div>
+            
         </div>
     )
 }

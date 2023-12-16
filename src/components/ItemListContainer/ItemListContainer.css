@@ -1,0 +1,15 @@
+h1{
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    padding: auto;
+    font-weight:500;
+    font-size: 28px;
+    color: black;
+    font-weight: 700;
+}
+
+.item-list-container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
