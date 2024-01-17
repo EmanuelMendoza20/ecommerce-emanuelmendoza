@@ -1,13 +1,17 @@
 import cartImg from './assets/cart.svg'
 import classes from './CartWidget.module.css'
+import { useCart } from '../../context/CartContext'
 
 const CartWidget = () => {
+    const { totalQuantity } = useCart()
+
     return (
         <button>
             <img src={cartImg}/>
-            0
+            { totalQuantity }
         </button>
     )
 }
 
 export default CartWidget
+
