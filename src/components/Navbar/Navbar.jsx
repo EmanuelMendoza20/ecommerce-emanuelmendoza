@@ -2,6 +2,7 @@ import classes from './Navbar.module.css'
 import CartWidget from '../CartWidget/CartWidget'
 import logoImg from './assets/logo-brand.svg'
 import { Link, useNavigate } from 'react-router-dom'
+import './Navbar.css';
 
 const Navbar = ({company}) => {
     const navigate = useNavigate()

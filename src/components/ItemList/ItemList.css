@@ -1,5 +1,9 @@
 .item-list{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
+    width: 1230px;
+    margin-left: 200px;
+    margin-right: 200px;
 }

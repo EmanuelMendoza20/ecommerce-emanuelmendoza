@@ -1,5 +1,6 @@
 import { useCart } from "../../context/CartContext"
 import { Link } from "react-router-dom"
+import './CartView.css'
 
 const CartView = () => {
 
@@ -7,13 +8,13 @@ const CartView = () => {
 
     return(
         <>
-            <h1>CARRITO</h1>
+            <h1 className="text-h1-cart">CARRITO</h1>
             <div>
                 {
                     cart.map(prod => {
                         return (
-                            <div key={prod.id}>
-                                <h2>{prod.name}</h2>
+                            <div className="container-producto-cart" key={prod.id}>
+                                <h3>{prod.name}</h3>
                                 <h3>Cantidad: {prod.quantity}</h3>
                                 <h3>Precio por unidad: ${prod.price}</h3>
                                 <h3>Subtotal: ${prod.quantity * prod.price}</h3>
@@ -23,8 +24,8 @@ const CartView = () => {
                     })
                 }
             </div>
-            <h1>Total de la compra: ${total}</h1>
-            <Link to='/checkout'>Checkout</Link>
+            <h2 className="text-total-products">Total de la compra: ${total}</h2>
+                <Link className="buttom-checkout" to='/checkout'>Checkout</Link>
         </>
     )
 }

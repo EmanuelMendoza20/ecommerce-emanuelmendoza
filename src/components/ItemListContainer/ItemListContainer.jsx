@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 import './ItemListContainer.css'
 import { getDocs, collection, query, where } from "firebase/firestore"
 import { db } from "../../services/firebase/firebaseConfig"
+// import SpinnerCarga from "../Spinner/Spinner"
 
 const ItemListContainer = ({ greeting }) => {
     const [loading, setLoading] = useState(true)
@@ -55,12 +56,17 @@ const ItemListContainer = ({ greeting }) => {
     }, [categoryId])
 
     if(loading) {
-        return <h1>Loading...</h1>
+        return <>
+                {/* <SpinnerCarga/> */}
+                <h1>Loading...</h1>
+                </>
     }
 
     return (
         <div className="item-list-container">
-            <h1>{greeting}</h1>
+            <div className="title-item-list-container">
+                <h1>{greeting}</h1>
+            </div>
             <ItemList products={products}/>
         </div>
     )

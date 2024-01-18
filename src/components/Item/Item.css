@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    border: 1px solid rgb(226, 226, 226);
+    border: 1px solid rgba(86, 86, 86, 0.12);
     border-radius: 8px;
     padding: 20px;
 }
@@ -14,6 +14,9 @@
 .title-h2{
     margin-bottom: 0px;
     margin-top: 0px;
+    font-weight: 100;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 .product-card a{
@@ -31,7 +34,28 @@
     text-decoration: none;
     width: 100%;
     text-align: center;
-}
+}s
 .product-card a:hover{
     background-color: #f3f3f3;
+}
+.price{
+    font-size: 18px;
+    font-weight: 500;
+}
+.img-container{
+    width: auto;
+}
+
+img.img-product{
+    width: 200px;
+    height: auto;
+}
+
+.separator{
+    width: 115%;
+    border-bottom: 1px solid rgba(86, 86, 86, 0.12);
+}
+
+.ball-pulse{
+    color: tomato;
 }

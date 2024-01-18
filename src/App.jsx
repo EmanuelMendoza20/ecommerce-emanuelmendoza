@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CartView from './components/CartView/CartView'
 import Checkout from './components/Checkout/Checkout'
-
+import '../src/components/Styles/Styles.css'
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
           <CartProvider>
             <Navbar />
             <Routes>
-              <Route path='/' element={<ItemListContainer greeting={'Bienvenidos'}/>}/>
+              <Route path='/' element={<ItemListContainer greeting={'Nuestros productos'}/>}/>
               <Route path='/category/:categoryId' element={<ItemListContainer greeting={'Productos filtrados'}/>}/>
               <Route path='/detail/:productId' element={<ItemDetailContainer/>} />
               <Route path='/cart' element={<CartView/>} />

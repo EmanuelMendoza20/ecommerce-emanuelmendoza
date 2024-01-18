@@ -44,10 +44,13 @@ const ButtonCount = ({onAdd, stock, initial = 1}) => {
 
     return (
         <div>
-            <p>{count}</p>
-            <button onClick={decrement}>-</button>
-            <button onClick={()=> onAdd(count)}>Agregar al carrito</button>
-            <button onClick={increment}>+</button>
+            <p>Unidades: {count}</p>
+            <div className="control-toadd-products">
+                <button className="decrement-buttom" onClick={decrement}>-</button>
+                <button className="add-products-buttom" onClick={()=> onAdd(count)}>Agregar al carrito</button>
+                <button className="increment-buttom" onClick={increment}>+</button>
+            </div>
+
 
         </div>
     )
@@ -70,11 +73,13 @@ const ItemDetail = ({id, name, category, img, price, description, stock}) => {
         toast.success(`Agregaste al carrito ${quantity} ${name}`, {
             position: "top-right",
             autoClose: 3000,
-            hideProgressBar: false,
+            hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: false,
             draggable: true,
             progress: undefined,
+            theme: "light",
+            
         });
 
 
@@ -84,14 +89,14 @@ const ItemDetail = ({id, name, category, img, price, description, stock}) => {
     return (
         <article>
             <header>
-                <h2>{name}</h2>
+                <h2 className="title-h2-detail">{name}</h2>
             </header>
             <picture>
-                <img className="img-product" src={img}/>
+                <img className="img-product-detail" src={img}/>
             </picture>
-            <section>
-                <p>Category: {category}</p>
-                <h3>${price}</h3>
+            <section className="information-product">
+                <p className="text-category-detail">Category: {category}</p>
+                <h3 className="price-detail">${price}</h3>
                 <p>Description: {description}</p>
             </section>
             <footer>
