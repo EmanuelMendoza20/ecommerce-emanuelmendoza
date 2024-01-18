@@ -4,6 +4,10 @@ import './ItemDetail.css'
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useCart } from "../../context/CartContext"
+import { useNotification } from "../../notification/NotificationService"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const InputCount = ({ onAdd, stock, initial = 1 }) => {
     const [count, setCount] = useState(initial)
@@ -54,6 +58,8 @@ const ItemDetail = ({id, name, category, img, price, description, stock}) => {
 
     const { addItem, isInCart } = useCart()
 
+    // const { showNotification } = useNotification()
+
     const ItemCount = inputType === 'input' ? InputCount : ButtonCount
 
     const handleOnAdd = (quantity) => {
@@ -61,7 +67,17 @@ const ItemDetail = ({id, name, category, img, price, description, stock}) => {
             id, name, price, quantity
         }
         addItem(objProductToAdd)
-        console.log('agregue al carrito', quantity);
+        toast.success(`Agregaste al carrito ${quantity} ${name}`, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+        });
+
+
     }
 
 
