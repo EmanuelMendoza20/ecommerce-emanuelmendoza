@@ -44,7 +44,7 @@ const ButtonCount = ({onAdd, stock, initial = 1}) => {
 
     return (
         <div>
-            <p>Unidades: {count}</p>
+            <p className="units-added">Unidades: {count}</p>
             <div className="control-toadd-products">
                 <button className="decrement-buttom" onClick={decrement}>-</button>
                 <button className="add-products-buttom" onClick={()=> onAdd(count)}>Agregar al carrito</button>
@@ -70,7 +70,7 @@ const ItemDetail = ({id, name, category, img, price, description, stock}) => {
             id, name, price, quantity
         }
         addItem(objProductToAdd)
-        toast.success(`Agregaste al carrito ${quantity} ${name}`, {
+        toast.info(`Agregaste al carrito ${quantity} ${name}`, {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: true,
@@ -97,14 +97,17 @@ const ItemDetail = ({id, name, category, img, price, description, stock}) => {
             <section className="information-product">
                 <p className="text-category-detail">Category: {category}</p>
                 <h3 className="price-detail">${price}</h3>
-                <p>Description: {description}</p>
+                <p className="description-product">Description: {description}</p>
             </section>
             <footer>
                 {
                     !isInCart(id) ? (
                         <ItemCount onAdd={handleOnAdd} stock={stock}/>
                     ) : (
-                        <Link to='/cart'>Finalizar compra</Link>
+                        <div className="button-container-go-to-check">
+                            <p className="units-added">Unidades agregadas</p>
+                            <Link className="button-go-to-check" to='/cart'>Finalizar compra</Link>
+                        </div>
                     )
                 }
             </footer>

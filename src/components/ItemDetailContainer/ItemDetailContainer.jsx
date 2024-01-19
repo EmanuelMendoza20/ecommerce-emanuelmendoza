@@ -38,12 +38,12 @@ const ItemDetailContainer = ({addItem}) => {
     }, [productId])
 
     if(loading) {
-        return <h1>Loading...</h1>
+        return <h1 className="text-product-detail-container">Loading...</h1>
     }
 
     return (
         <>
-            <h1>Detalle de producto</h1>
+            <h1 className="text-product-detail-container">Detalle de producto</h1>
             <ItemDetail {...product} addItem={addItem}/>
         </>
     )

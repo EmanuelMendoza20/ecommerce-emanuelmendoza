@@ -1,0 +1,9 @@
+.text-loading{
+    color: tomato;
+}
+.text-product-detail-container{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 24px;
+}

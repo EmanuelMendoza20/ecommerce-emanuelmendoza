@@ -8,10 +8,10 @@ const Item = ({ id, name, img, price}) => {
                 <img className="img-product" src={img}/>
             </div>
             <div className="separator"></div>
+            <h3 className="price">${price}</h3>
             <div className="title-container">
                 <h2 className="title-h2">{name}</h2>
             </div>
-            <h3 className="price">${price}</h3>
             <Link to={`/detail/${id}`}>Agregar</Link>
         </div>  
     )
