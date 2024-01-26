@@ -38,13 +38,17 @@ const ItemDetailContainer = ({addItem}) => {
     }, [productId])
 
     if(loading) {
-        return <h1 className="text-product-detail-container">Loading...</h1>
+        <div className="spin-loader-container">
+            <div class="loader"></div>
+        </div>
     }
 
     return (
         <>
-            <h1 className="text-product-detail-container">Detalle de producto</h1>
-            <ItemDetail {...product} addItem={addItem}/>
+            <div className="item-detail-container">
+                <h1 className="text-product-detail-container">Detalle de producto</h1>
+                <ItemDetail {...product} addItem={addItem}/>
+            </div>
         </>
     )
 }

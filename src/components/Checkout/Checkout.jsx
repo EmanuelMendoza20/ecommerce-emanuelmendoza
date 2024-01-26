@@ -98,7 +98,12 @@ const Checkout = () => {
     }
 
     if(loading) {
-        return <h1 className="text-h1-order">Se esta generando su orden...</h1>
+        return  <div className="spin-loader-container">
+                    <h2 className="ticked-generating">
+                        Estamos procesando tu orden
+                    </h2>
+                    <div class="loader"></div>
+                </div>
     }
 
     if(orderId) {

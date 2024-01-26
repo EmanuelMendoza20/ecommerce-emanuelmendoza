@@ -56,10 +56,12 @@ const ItemListContainer = ({ greeting }) => {
     }, [categoryId])
 
     if(loading) {
-        return <>
-                {/* <SpinnerCarga/> */}
-                <h1>Loading...</h1>
-                </>
+        return (
+                    <div className="spin-loader-container">
+                        <div class="loader"></div>
+                    </div>
+
+        ) 
     }
 
     return (
