@@ -1,4 +1,4 @@
-# eCommerce React App
+# Brand - eCommerce React App
 
 Bienvenido a mi eCommerce desarrollado con React JS, proyecto final del curso de React en Coderhouse.
 
